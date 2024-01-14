@@ -44,6 +44,17 @@ class Biggie:
     # In words: only if you are not moving towards left of the screen (west), then turn the direction to right (east), as we
     # are not allowed to turn left or right when in a horizontal line.
 
+    def add_tail(self):
+        tail = tu.Turtle() #this line and below are repetitive. Same as in create biggie.
+        # we can make it better by creating a new function
+        tail.shape("square")
+        tail.color("white")
+        tail.penup()
+        x_cord1= self.biggie_list[-1].xcor()
+        y_cord1=self.biggie_list[-1].ycor()
+        tail.goto(x_cord1,y_cord1)
+        self.biggie_list.append(tail)
+
     def move_up(self):
         direction= self.biggie_list[0].heading()
         if direction == 0:

@@ -20,6 +20,11 @@ class Score(Turtle):
         self.clear()
         self.write(f"Score:{self.count} ", False, align=ALIGNMENT, font=FONT)
 
+    def game_over(self):
+        self.penup()
+        self.goto(0,0)
+        self.write("GAME OVER", False, align=ALIGNMENT, font=FONT)
+
 
 
 
