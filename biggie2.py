@@ -37,6 +37,11 @@ class Biggie:
         location1= (x_cord1, y_cord1)
         self.create_biggie(location=location1)
 
+    def reset(self):
+        for member in self.biggie_list:
+            member.goto(999,999)
+        self.biggie_list.clear()
+        self.first_segments()
 
     def move_up(self):
         direction= self.biggie_list[0].heading()

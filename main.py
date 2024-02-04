@@ -1,3 +1,7 @@
+#Later updates: 1) when out of bound, snake should reset.
+# 2) Score should keep updating as is, but when out of bound, it should reset to 0. While high score
+# should keep track of the highest till this time including previous executions.
+
 import biggie2
 # OR biggie. Biggie2 has more concise code
 import turtle as tu
@@ -38,14 +42,18 @@ while eog==False:
             eog= True
 
     if head.xcor() >365 or head.xcor() <-365 or head.ycor() >315 or head.ycor() <-315:
-        score1.game_over()
-        eog=True
+        # score1.game_over()
+        # eog=True
+        score1.update_high_score()
+        k.reset()
+        head=k.biggie_list[0]
+
 
 
     if head.distance (food1.xcor(),food1.ycor())<20:
-        print ("yaay")
+        # print ("yaay")
         food1.create_food()
-        score1.update()
+        score1.update_score()
         k.add_tail()
 
 
